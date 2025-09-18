@@ -27,7 +27,10 @@ img = Image.open(image_path)
 # width is used to set the width of an image
 st.image(img)
 
-df= pd.read_csv('Crop_recommendation.csv')
+current_dir = os.path.dirname(__file__)
+csv_path = os.path.join(current_dir, "Crop_recommendation.csv")
+
+df = pd.read_csv(csv_path)
 
 #features = df[['temperature', 'humidity', 'ph', 'rainfall']]
 X = df[['N', 'P','K','temperature', 'humidity', 'ph', 'rainfall']]
@@ -101,5 +104,6 @@ def main():
 ## Running the main function
 if __name__ == '__main__':
     main()
+
 
 
