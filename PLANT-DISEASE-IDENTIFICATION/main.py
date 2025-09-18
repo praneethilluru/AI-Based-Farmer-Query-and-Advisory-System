@@ -15,6 +15,7 @@ app_mode = st.sidebar.selectbox("Select Page",["HOME","DISEASE RECOGNITION"])
 #app_mode = st.sidebar.selectbox("Select Page",["Home","About","Disease Recognition"])
 
 # import Image from pillow to open images
+import os
 from PIL import Image
 current_dir = os.path.dirname(__file__)
 image_path = os.path.join(current_dir, "Diseases.png")
@@ -56,3 +57,4 @@ elif(app_mode=="DISEASE RECOGNITION"):
                       'Tomato___healthy']
 
         st.success("Model is Predicting it's a {}".format(class_name[result_index]))
+
