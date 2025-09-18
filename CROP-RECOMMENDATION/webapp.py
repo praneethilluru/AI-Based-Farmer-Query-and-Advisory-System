@@ -19,7 +19,10 @@ from sklearn.preprocessing import LabelEncoder
 # Display Images
 # import Image from pillow to open images
 from PIL import Image
-img = Image.open("crop.png")
+current_dir = os.path.dirname(__file__)
+image_path = os.path.join(current_dir, "crop.png")
+
+img = Image.open(image_path)
 # display image using streamlit
 # width is used to set the width of an image
 st.image(img)
@@ -98,4 +101,5 @@ def main():
 ## Running the main function
 if __name__ == '__main__':
     main()
+
 
